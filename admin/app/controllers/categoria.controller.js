@@ -1,9 +1,10 @@
 goog.provide('precode.sistema.CategoriaCtrl');
 
-precode.sistema.CategoriaCtrl = function (CategoriaService) {
+precode.sistema.CategoriaCtrl = function (CategoriaService, UtilService) {
   var vm = this;
 
   vm.Categoria = CategoriaService;
+  vm.Util = UtilService;
   vm.Categoria.load();
   vm.modoEdicao = false;
 

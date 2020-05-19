@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-lg-4 col-md-6">
                 <div class="single-feature">
-                    <a href="/admin" target="_blank" class="title">
+                    <a href="{{AppCtrl.Util.ADMINESTENDPOINT}}" target="_blank" class="title">
                         <i class="fas fa-chart-bar"></i>
                         <h3>Painel administrativo</h3>
                     </a>
@@ -15,7 +15,7 @@
                 <h5>Carrinho de compras</h5>
                 <div class="single-feature">
                     <p><b>SubTotal:</b> R${{AppCtrl.Carrinho.selected.subTotal || "0,00"}}</p>
-                    <a href="/carrinho/{{AppCtrl.carrinhoId}}">Ir para o carrinho</a>
+                    <a href="{{AppCtrl.Util.POINT}}/carrinho/{{AppCtrl.carrinhoId}}">Ir para o carrinho</a>
                 </div>
             </div>
         </div>
@@ -37,13 +37,13 @@
 
         <div class="row">
             <div class="col-lg-4 col-md-6" ng-repeat="produto in AppCtrl.Produto.list">
-                <a href="/produto/{{produto.id}}">
+                <a href="{{AppCtrl.Util.POINT}}/produto/{{produto.id}}">
                     <div class="single-product">
                         <div class="product-img">
                             <img class="img-fluid w-100" src="{{produto.urlFotoProduto || 'img/produto-sem-imagem.jpg'}}" alt="" />
                         </div>
                         <div class="product-btm">
-                            <a href="/produto/{{produto.id}}" class="d-block">
+                            <a href="{{AppCtrl.Util.POINT}}/produto/{{produto.id}}" class="d-block">
                                 <h4>{{produto.nome}}</h4>
                                 <div>
                                     <small>{{produto.categoria}}</small>

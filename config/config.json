@@ -1,9 +1,9 @@
 {
     "name": "teste-precode",
-    "pathSite": "http://127.0.0.1/",
-    "pathApi": "http://127.0.0.1/api",
-    "pathAdmin": "http://127.0.0.1/admin/",
-    "pathAuth": "http://127.0.0.1/auth",
+    "pathSite": "http://127.0.0.1/precode/web/",
+    "pathApi": "http://127.0.0.1/precode/api",
+    "pathAdmin": "http://127.0.0.1/precode/admin/",
+    "pathAuth": "http://127.0.0.1/precode/auth",
     "AuthenticationHash": "BSKHXk6JpYLKaBvO00w99vkY+2+L+u0bNHJs+yYsf0c=",
     "analytics": "off",
     "mode": "dev",

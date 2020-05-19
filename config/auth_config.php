@@ -4,9 +4,9 @@
 use util\Util;
 
 $configs = [
-    "apiPath" => "http://127.0.0.1/api",
-    "authPath" => "http://127.0.0.1/auth",
-    "containerPath" => "http://127.0.0.1/auth",
+    "apiPath" => "http://127.0.0.1/precode/api",
+    "authPath" => "http://127.0.0.1/precode/auth",
+    "containerPath" => "http://127.0.0.1/precode/auth",
 ];
 
 DEFINE("PRECODE_OA2LOGIN_PATH", $configs["apiPath"] . "/receive_login");

@@ -13,9 +13,9 @@ precode.sistema.UtilService = function ($http, $q) {
                 return str;
             }
         },
-        RESTENDPOINT: "/api",
-        AUTHRESTENDPOINT: "/auth",
-        POINT: "/admin",
+        RESTENDPOINT: "/precode/api",
+        AUTHRESTENDPOINT: "/precode/auth",
+        POINT: "/precode/admin",
         active: "resumo",
         uploadFile
     };

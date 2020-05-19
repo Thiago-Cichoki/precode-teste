@@ -1,11 +1,12 @@
 goog.provide('precode.sistema.AppCtrl');
 
-precode.sistema.AppCtrl = function (CategoriaService, ProdutoService, CarrinhoService) {
+precode.sistema.AppCtrl = function (CategoriaService, ProdutoService, CarrinhoService, UtilService) {
   var vm = this;
 
   vm.Categoria = CategoriaService;
   vm.Produto = ProdutoService;
   vm.Carrinho = CarrinhoService;
+  vm.Util = UtilService;
   vm.Categoria.load();
   vm.Produto.load();
   vm.ProdutoCarrinho = {};
@@ -49,7 +50,7 @@ precode.sistema.AppCtrl.prototype.adicionarCarrinho = function (produto = null, 
   vm.ProdutoCarrinho.idCarrinho = carrinhoId;
   vm.Carrinho.adicionarProduto(vm.ProdutoCarrinho).then(function () {
     if(redirect){
-      window.location.href = "/carrinho/" + sessionStorage.getItem('carrinhoId');
+      window.location.href = vm.Util.POINT + "/carrinho/" + sessionStorage.getItem('carrinhoId');
       return;
     }
     
@@ -66,7 +67,7 @@ precode.sistema.AppCtrl.prototype.criarCarrinho = function () {
     vm.ProdutoCarrinho.idCarrinho = vm.Carrinho.selected.id;
 
     vm.Carrinho.adicionarProduto(vm.ProdutoCarrinho).then(function () {
-      window.location.href = "/carrinho/" + sessionStorage.getItem('carrinhoId');
+      window.location.href = vm.Util.POINT +  "/carrinho/" + sessionStorage.getItem('carrinhoId');
     });
   });
 }

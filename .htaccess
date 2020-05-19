@@ -1,5 +1,0 @@
-RewriteEngine on
-
-RewriteCond %{REQUEST_URI} !^/web
-RewriteCond %{HTTP:X-Forwarded-Proto} !https
-RewriteRule ^(.*)$ /web/$1 [NC,L]

@@ -99,7 +99,7 @@ precode.app = angular.module('precode.app', [
     .directive('precodeModuleRequired', precode.directive.precodeModuleRequired)
 
 
-    .controller("precode.AppCtrl", ['$scope', '$window', '$state', '$stateParams', 'UtilService', precode.AppCtrl])
+    .controller("precode.AppCtrl", precode.AppCtrl)
     .controller('precode.sistema.CategoriaCtrl', precode.sistema.CategoriaCtrl)
     .controller('precode.sistema.ProdutoCtrl', precode.sistema.ProdutoCtrl)
 

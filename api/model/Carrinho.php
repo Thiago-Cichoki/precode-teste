@@ -12,7 +12,6 @@ class Carrinho extends Model
 
     public $id;
     public $subTotal;
-    public $valorFrete;
     public $total;
     public $created_at;
     

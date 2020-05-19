@@ -14,9 +14,10 @@ precode.sistema.UtilService = function () {
                 return str;
             }
         },
-        RESTENDPOINT: "/api",
-        AUTHRESTENDPOINT: "/auth",
-        POINT: "/web"
+        RESTENDPOINT: "/precode/api",
+        AUTHRESTENDPOINT: "/precode/auth",
+        ADMINESTENDPOINT: "/precode/admin",
+        POINT: "/precode/web"
     };
 
     return self;

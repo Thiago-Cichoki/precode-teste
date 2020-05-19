@@ -33,7 +33,7 @@ require_once "../vendor/autoload.php";
 			<!-- Left navbar links -->
 			<ul class="navbar-nav">
 				<li class="nav-item">
-					<a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+					<a class="nav-link" data-widget="pushmenu" href role="button"><i class="fas fa-bars"></i></a>
 				</li>
 			</ul>
 		</nav>
@@ -42,7 +42,7 @@ require_once "../vendor/autoload.php";
 		<!-- Main Sidebar Container -->
 		<aside class="main-sidebar sidebar-dark-primary elevation-4">
 			<!-- Brand Logo -->
-			<a href="/" class="brand-link">
+			<a href="<?= \util\Util::getPathAdmin(); ?>" class="brand-link">
 				<span class="brand-text font-weight-light">PRECODE</span>
 			</a>
 
@@ -60,19 +60,19 @@ require_once "../vendor/autoload.php";
 							</a>
 							<ul class="nav nav-treeview">
 								<li class="nav-item">
-									<a href="/admin/produtos" class="nav-link">
+									<a href="<?= \util\Util::getPathAdmin(); ?>/produtos" class="nav-link">
 										<i class="far fa-circle nav-icon"></i>
 										<p>Meus produtos</p>
 									</a>
 								</li>
 								<li class="nav-item">
-									<a href class="nav-link">
+									<a href="<?= \util\Util::getPathAdmin(); ?>/produtos/novo" class="nav-link">
 										<i class="far fa-circle nav-icon"></i>
 										<p>Novo Produto</p>
 									</a>
 								</li>
 								<li class="nav-item">
-									<a href="/admin/categoria" class="nav-link">
+									<a href="<?= \util\Util::getPathAdmin(); ?>/categoria" class="nav-link">
 										<i class="far fa-circle nav-icon"></i>
 										<p>Categorias</p>
 									</a>
@@ -99,7 +99,7 @@ require_once "../vendor/autoload.php";
 				Aguardo o contato da equipe Precode!
 			</div>
 			<!-- Default to the left -->
-			<strong>Copyright &copy; 2020 <a href="/">Thiago Miranda Cichoki</a>.</strong>
+			<strong>Copyright &copy; 2020 <a href="{{AppCtrl.Util.POINT}}">Thiago Miranda Cichoki</a>.</strong>
 		</footer>
 	</div>
 	<!-- ./wrapper -->

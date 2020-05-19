@@ -5,6 +5,7 @@ precode.sistema.ProdutoCtrl = function ($scope, CategoriaService, ProdutoService
 
   vm.$state = $state;
   $scope.Util = UtilService;
+  vm.UtilService = UtilService;
   vm.Produto = ProdutoService;
   vm.Categoria = CategoriaService;
   vm.Categoria.load();
@@ -32,7 +33,7 @@ precode.sistema.ProdutoCtrl.prototype.create = function () {
   
   vm.Produto.selected.urlFotoProduto = $("#thumb-produto").attr('src');
   vm.Produto.create(vm.Produto.selected).then(function (res) {
-    window.location.href = "/admin/produtos";
+    window.location.href = vm.UtilService.POINT + "/produtos";
     $(document).Toasts('create', {
       title: 'Sucesso',
       body: 'O produto foi cadastrado com sucesso!',
@@ -69,7 +70,7 @@ precode.sistema.ProdutoCtrl.prototype.delete = function (id) {
       class: 'bg-success'
     });
 
-    window.location.href = "/admin/produtos";
+    window.location.href = vm.UtilService.POINT + "/produtos";
   });
 }
 
