@@ -15,3 +15,8 @@ INSTRUÇÕES PARA SETUP DO PROJETO:
 
 *Para acessar a 'Loja virtual', acesse /web após as instruções acima*.
 
+*Este projeto contém:   
+    - Slim Framework para a construção de rotas de API REST*
+    - AngularJs como framework JS*
+    - Padrão MVC*
+
