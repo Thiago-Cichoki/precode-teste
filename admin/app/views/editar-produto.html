@@ -1,0 +1,70 @@
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Editar Produto</h1>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <h4>Imagem do produto:</h4>
+                                    <label for="fotoProduto" style="width: 100px;height: 100px;cursor: pointer;">
+                                        <img src="{{ProdutoCtrl.imagemProduto}}" class="rounded float-left img-thumbnail" id="thumb-produto">
+                                    </label>
+                                    <input type="file" id="fotoProduto" style="display: none;" onchange="angular.element(this).scope().uploadFoto(this)">
+                                </div>
+                                <div class="col-md-6" style="margin-top: 2%;">
+                                    <label for="nomeProduto">Nome do produto:</label>
+                                    <input type="text" id="nomeProduto" class="form-control"
+                                        placeholder="Celular Nokia 16''" ng-model="ProdutoCtrl.Produto.selected.nome">
+                                </div>
+                                <div class="col-md-4" style="margin-top: 2%;">
+                                    <label for="categoriaProduto">Categoria do produto:</label>
+                                    <select class="form-control" id="categoriaProduto"
+                                        ng-model="ProdutoCtrl.Produto.selected.idCategoria">
+                                        <option value="" selected>Selecione</option>
+                                        <option ng-repeat="categoria in ProdutoCtrl.Categoria.list"
+                                            value="{{categoria.id}}">{{categoria.nome}}</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-9" style="margin-top: 2%;">
+                                    <label for="descricaoProduto">Descrição do produto:</label>
+                                    <textarea id="descricaoProduto" cols="30" rows="10" class="form-control"
+                                        placeholder="Este produto é imbatível..."
+                                        ng-model="ProdutoCtrl.Produto.selected.descricao"></textarea>
+                                </div>
+                                <div class="col-md-4" style="margin-top: 2%;">
+                                    <label for="precoProduto">Preço do produto (R$):</label>
+                                    <input type="text" id="precoProduto" class="form-control" placeholder="19,90" ng-model="ProdutoCtrl.Produto.selected.preco"
+                                        onKeyPress="return(formatarMoeda(this,'.',',',event))">
+                                </div>
+                                <div class="col-md-4" style="margin-top: 2%;">
+                                    <label for="quantidadeProduto">Quantidade em estoque:</label>
+                                    <input type="number" id="quantidadeProduto" class="form-control"
+                                        ng-model="ProdutoCtrl.Produto.selected.quantidade" min="1">
+                                </div>
+                            </div>
+                            <div>
+                                <button class="btn btn-success" style="margin-top: 2%;" ng-click="ProdutoCtrl.update()">Salvar</button>
+                                <button class="btn btn-danger" style="margin-top: 2%;" ng-click="ProdutoCtrl.delete(ProdutoCtrl.Produto.selected.id)">Excluir produto</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

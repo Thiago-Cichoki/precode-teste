@@ -1,0 +1,94 @@
+<section class="cart_area">
+    <div class="container">
+        <div class="cart_inner">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Produto</th>
+                            <th scope="col">Preço</th>
+                            <th scope="col">Quantidade</th>
+                            <th scope="col">Total</th>
+                            <th scope="col">#</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="produto in AppCtrl.Carrinho.selected.produtos">
+                            <td>
+                                <div class="media">
+                                    <div class="d-flex col-md-2">
+                                        <img src="{{produto.urlFotoProduto || 'img/produto-sem-imagem.jpg'}}" alt="" style="max-width: 100%;" />
+                                    </div>
+                                    <div class="media-body">
+                                        <p>{{produto.nome}}</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <h5>R${{produto.preco}}</h5>
+                            </td>
+                            <td>
+                                <div class="product_count">
+                                    <input type="text" name="qty" id="sst{{produto.id}}" min="0" value="1"
+                                        title="Quantidade:" class="input-text qty" ng-model="produto.quantidade" />
+                                    <button ng-click="AppCtrl.addProduto(produto.id)" class="increase items-count"
+                                        type="button">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                    <button ng-click="AppCtrl.removerProduto(produto.id)" class="reduced items-count"
+                                        type="button">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                </div>
+                            </td>
+                            <td>
+                                <h5>R${{(produto.quantidade * produto.preco) | number:2}}</h5>
+                            </td>
+                            <td>
+                                <button class="btn btn-default" title="remover produto" ng-click="AppCtrl.removerProdutoDoCarrinho(produto.id)">X</button>
+                            </td>
+                        </tr>
+                        <tr class="bottom_button">
+                            <td>
+                                <a class="gray_btn" href ng-click="AppCtrl.atualizarCarrinho()">Atualizar carrinho</a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <h5>Subtotal</h5>
+                            </td>
+                            <td>
+                                <h5>R${{AppCtrl.Carrinho.selected.subTotal}}</h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <h5>Total</h5>
+                            </td>
+                            <td>
+                                <h4>R${{AppCtrl.Carrinho.selected.total}}</h4>
+                            </td>
+                        </tr>
+                        <tr class="out_button_area">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <div class="checkout_btn_inner">
+                                    <a class="gray_btn" href="/">Continuar comprando</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</section>

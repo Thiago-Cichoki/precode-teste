@@ -1,0 +1,49 @@
+<div class="product_image_area">
+    <div class="container">
+        <div class="row s_product_inner">
+            <div class="col-lg-6">
+                <div class="s_product_img">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="{{AppCtrl.Produto.selected.urlFotoProduto || 'img/produto-sem-imagem.jpg'}}"
+                                alt="First slide" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 offset-lg-1">
+                <div class="s_product_text">
+                    <h3>{{AppCtrl.Produto.selected.nome}}</h3>
+                    <h2>R${{AppCtrl.Produto.selected.preco}}</h2>
+                    <ul class="list">
+                        <li>
+                            <a class="active" href="#">
+                                <span>Categoria</span> : {{AppCtrl.Produto.selected.categoria}}</a>
+                        </li>
+                    </ul>
+                    <p>
+                        {{AppCtrl.Produto.selected.descricao}}
+                    </p>
+                    <div class="product_count">
+                        <label for="qty">Quantidade:</label>
+                        <input type="text" name="qty" id="qqt" min="1" title="Quantidade:"
+                            class="input-text qty" ng-model="AppCtrl.ProdutoCarrinho.quantidade"/>
+                        <button
+                            onclick="var result = document.getElementById('qqt'); var qqt = result.value; if( !isNaN( qqt )) result.value++;return false;"
+                            class="increase items-count" type="button">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <button
+                            onclick="var result = document.getElementById('qqt'); var qqt = result.value; if( !isNaN( qqt ) &amp;&amp; qqt > 0 ) result.value--;return false;"
+                            class="reduced items-count" type="button">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                    </div>
+                    <div class="card_area">
+                        <a class="main_btn" ng-click="AppCtrl.adicionarCarrinho();">Adicionar ao carrinho</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+#1
+cd C:\xampp\htdocs\web
+cd C:\xampp\htdocs\web
+
+#2 (prod/compile)
+python lib/closure-library/closure/bin/build/closurebuilder.py --root=lib/closure-library/ --root=app --namespace="taggs.app" --output_mode=compiled --compiler_jar=lib/compiler.jar --compiler_flags="--angular_pass" --compiler_flags="--generate_exports" --compiler_flags="--compilation_level=WHITESPACE_ONLY" > app/taggs.app.js
+
+#3 (dev/getdependencies)
+python lib/closure-library/closure/bin/build/depswriter.py --root_with_prefix="app ../../../../app" > app/deps.js
+
+#4 errors
+start notepad "C:\Program Files (x86)\EasyPHP-Devserver-17\eds-binaries\httpserver\apache2425vc11x86x170519160935\logs\error.log"
