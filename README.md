@@ -14,6 +14,7 @@ INSTRUÇÕES PARA SETUP DO PROJETO:
     git clone https://github.com/google/closure-library.git
 
 *Para acessar a 'Loja virtual', acesse /web após as instruções acima*.
+*É necessário cadastrar os produtos para começar. Para fazer isso, acesse o painel administrativo*
 
 *Este projeto contém:   
     - Slim Framework para a construção de rotas de API REST*
